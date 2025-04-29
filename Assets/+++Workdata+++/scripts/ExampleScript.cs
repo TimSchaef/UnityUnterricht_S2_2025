@@ -11,6 +11,13 @@ public class ExampleScript : MonoBehaviour
     private int myCounterInteger;
     private int mySecondInteger;
     private string myfirstString;
+
+    private float myFirstFloat = 3.234f;
+    private char myCharacter = 'n'; 
+    
+    // private GameObjekt myGameObjekt; //Ein Objekt von Unity in einer Szene 
+    // Ist Momentan leer (eine leere Kiste) - wir können aber ein Objekt aus unserer Szene hinzufügen
+    // und es so in unserem Script benutzbar machen
     
     
     
@@ -20,12 +27,11 @@ public class ExampleScript : MonoBehaviour
         Debug.Log("Das Programm ist gestartet");
 
         myFirstBooleam = true;
-        myFirstInteger = 8;
+        myFirstInteger = 12;
         mySecondInteger = 5;
         myCounterInteger = 0;
         myfirstString = "Hello World";
         
-        int result = myFirstInteger + mySecondInteger;
 
         myfirstString = myfirstString + ",Go Fight"; 
         
@@ -33,7 +39,28 @@ public class ExampleScript : MonoBehaviour
         Debug.Log("myFirstInteger is: " + myFirstInteger);
         Debug.Log("myfirstString is: " + myfirstString);
         
-        Debug.Log("int1 + int2 = " + result);
+        // +
+        int result = myFirstInteger + mySecondInteger;
+        Debug.Log("int1 + int2 = " + result);   
+        
+        // -
+        int result1 = myFirstInteger - mySecondInteger;
+        Debug.Log("int1 - int2 = " + result1);
+       
+        // /
+        float result2 = (float) myFirstInteger / mySecondInteger;
+        Debug.Log("int3 / int2 = " + result2);
+       
+        // * 
+        int result3 = myFirstInteger * mySecondInteger;
+        //um) den ersten integer in ein float, damit wir als Ergebniss aus eine float-Zahl bekommen
+        Debug.Log("int4 * int2 = " + result3);
+        
+        // %
+        int result4 = myFirstInteger % mySecondInteger;
+        Debug.Log("int4 % int2 = " + result4);
+        
+        
 
         // result = result + 1;
         //result += 1;
@@ -50,12 +77,12 @@ public class ExampleScript : MonoBehaviour
     
 
     // Update is called once per frame
-    void Update()
-    {
-        //Debug.Log("Das Programm läuft");
-        myCounterInteger++;
-        Debug.Log("myCounterIntreger" + myCounterInteger);
-    }
+    // void Update()
+    // {
+    //     //Debug.Log("Das Programm läuft");
+    //     myCounterInteger++;
+    //     Debug.Log("myCounterIntreger" + myCounterInteger);
+    // }
     //unsere erste Funktion
     // Namen können wir frei aussuchen - sollte aber natürlich irgendwie die Funktion beschreiben
     // Funktionen werden großgeschrieben 
