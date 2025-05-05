@@ -459,7 +459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1104314186
 RectTransform:
   m_ObjectHideFlags: 0
@@ -590,6 +590,8 @@ GameObject:
   - component: {fileID: 1179420949}
   - component: {fileID: 1179420951}
   - component: {fileID: 1179420952}
+  - component: {fileID: 1179420953}
+  - component: {fileID: 1179420954}
   m_Layer: 0
   m_Name: ScriptTester
   m_TagString: Untagged
@@ -645,13 +647,39 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179420948}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5988541853fdd94a9df22a0a1546425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   unserName: Timschaefessssssss
   email: Timschaefer@gmail.com
+--- !u!114 &1179420953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179420948}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de02c46f7a783b40b7190f92f0350d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1179420954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179420948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c8f283e69c9224eb81a9f2ed7c059c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  scale: 3
 --- !u!1 &1553531502
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1646344593
 RectTransform:
   m_ObjectHideFlags: 0
