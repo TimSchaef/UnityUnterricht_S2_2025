@@ -1,3 +1,4 @@
+using MyBox;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,12 +13,12 @@ public class CreatingSimpleObjekts : MonoBehaviour
     private GameObject Sphere4;
     
     
-    Vector3 direction = new Vector3(3f, 1f);
+    private Vector3 direction = new Vector3(0f, 0f);
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
    void Start()
     {
-      goSphere =  GameObject.CreatePrimitive(PrimitiveType.Sphere);
+      goSphere =  GameObject.CreatePrimitive(PrimitiveType.Cube);
        Sphere1 = GameObject.CreatePrimitive(PrimitiveType.Sphere);
        Sphere2 = GameObject.CreatePrimitive(PrimitiveType.Sphere);
        Sphere3 = GameObject.CreatePrimitive(PrimitiveType.Sphere); 
@@ -33,7 +34,7 @@ public class CreatingSimpleObjekts : MonoBehaviour
     }
     void Update()
     {
-        goSphere.transform.position = goSphere.transform.position + direction * Time.deltaTime * speed;
+        goSphere.transform.position = goSphere.transform.position + direction.normalized * Time.deltaTime * speed;
 
         float currentScale = goSphere.transform.localScale.x;
         
@@ -44,31 +45,41 @@ public class CreatingSimpleObjekts : MonoBehaviour
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            direction = -direction;
+            direction = new Vector3(0f, 0f, 0f);
             Debug.Log("Space Key pressed, The new direction is" + direction);
         }
 
-        if (Keyboard.current.wKey.wasPressedThisFrame)
+        
+        ///----------Bewegung____________
+
+        direction = Vector3.zero;
+        
+        if (Keyboard.current.wKey.isPressed)
         {
-         direction = new Vector3(0f, 1f);
+         //direction = new Vector3(0f, 1f);
+         direction.y = 1;
          Debug.Log("W Key pressed, The new direction is Up"); 
         }
-        if (Keyboard.current.sKey.wasPressedThisFrame)
+        
+        if (Keyboard.current.sKey.isPressed)
         {
-         direction = new Vector3(0f, -1f);
+         //direction = new Vector3(0f, -1f);
+         direction.y = -1;
          Debug.Log("S Key pressed, The new direction is Down"); 
         }
         
-        if (Keyboard.current.aKey.wasPressedThisFrame)
+        if (Keyboard.current.aKey.isPressed)
         {
-         direction = new Vector3(-1f, 0f);
+         //direction = new Vector3(-1f, 0f);
          //direction = Vector3.right;
+         direction.x = -1;
          Debug.Log("A Key pressed, The new direction is Left"); 
         }
         
-        if (Keyboard.current.dKey.wasPressedThisFrame)
+        if (Keyboard.current.dKey.isPressed)
         {
-         direction = new Vector3(1f, 0f);
+         //direction = new Vector3(1f, 0f);
+         direction.x= 1;
          Debug.Log("D Key pressed, The new direction is Right"); 
         }
         
@@ -82,7 +93,11 @@ public class CreatingSimpleObjekts : MonoBehaviour
          goSphere.transform.localScale = Vector3.zero * scale;
         }
         
-        
+        if (Keyboard.current.rKey.isPressed)
+        { 
+         //goSphere.transform.eulerAngles = new Vector3(0, 0, 40);
+         goSphere.transform.Rotate(new Vector3(0, 0, 40) * Time.deltaTime);
+        }
     }
     
 
